@@ -1,10 +1,8 @@
 import express from "express";
-import 'dotenv/config'
-
-const DB_URL = process.env.DATABASE_URL;
-console.log(DB_URL)
+import "dotenv/config";
 
 import db from "./db.js";
+import userRoutes from "./src/routes/user.routes.js";
 
 const app = express();
 const port = 3000;
@@ -19,12 +17,16 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
+// routes
+app.route("/user", userRoutes);
+
 app.listen(port, async () => {
   await db()
     .then((res) => {
-      console.log(`Server running at http://localhost:${port}`, res);
+      console.log(`Server running at ${port}`);
     })
     .catch((error) => {
-      console.log("ERROR in connecting DB", error);
+      console.error("ERROR in connecting DB", error);
+      process.exit(1);
     });
 });
