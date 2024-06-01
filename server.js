@@ -8,6 +8,7 @@ const app = express();
 const port = 3000;
 
 app.use(express.static("public"));
+app.use(express.json())
 
 app.get("/env", (req, res) => {
   res.send(`ENVIRONMENT IS : ${process.env.NODE_ENV}`);
@@ -18,7 +19,7 @@ app.get("/", (req, res) => {
 });
 
 // routes
-app.route("/user", userRoutes);
+app.use("/user", userRoutes);
 
 app.listen(port, async () => {
   await db()

@@ -9,10 +9,11 @@ const userSchema = new Schema(
       unique: true,
     },
     stripeCustomerKey: String,
+    stripeCustomerObj: Object,
   },
   {
     timestamps: true,
   }
 );
 
-export default userSchema
+export default userSchema;
