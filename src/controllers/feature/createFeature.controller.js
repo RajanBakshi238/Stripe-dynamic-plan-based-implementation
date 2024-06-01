@@ -35,7 +35,6 @@ const createFeature = async (request, response) => {
       data: feature,
     });
   } catch (error) {
-    console.log(error, "....")
     return response.status(500).json({
       messsage: "Something went wrong",
       error: error,
