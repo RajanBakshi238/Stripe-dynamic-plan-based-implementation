@@ -18,8 +18,6 @@ const createProduct = async (request, response) => {
       },
     });
 
-    console.log(stripeProduct, ">>>>>>>>>>>>>")
-
     const product = await Product.create({
       ...body,
       stripeProductId: stripeProduct.id,
