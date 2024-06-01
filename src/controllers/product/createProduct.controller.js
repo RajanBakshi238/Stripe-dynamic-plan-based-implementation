@@ -15,6 +15,7 @@ const createProduct = async (request, response) => {
           interval: "month", // @future should be dynamic from api, @todo if not dynamic move to constants
         },
         unit_amount: body.price,
+        // name: body.name,
       },
     });
 
