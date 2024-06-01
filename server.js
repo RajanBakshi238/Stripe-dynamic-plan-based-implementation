@@ -3,6 +3,7 @@ import "dotenv/config";
 
 import db from "./db.js";
 import userRoutes from "./src/routes/user.routes.js";
+import featureRoutes from "./src/routes/feature.routes.js";
 
 const app = express();
 const port = 3000;
@@ -20,6 +21,7 @@ app.get("/", (req, res) => {
 
 // routes
 app.use("/user", userRoutes);
+app.use("/feature", featureRoutes);
 
 app.listen(port, async () => {
   await db()
