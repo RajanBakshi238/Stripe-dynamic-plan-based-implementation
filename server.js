@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors"
 import "dotenv/config";
 
 import db from "./db.js";
@@ -9,6 +10,7 @@ import productRoutes from "./src/routes/product.routes.js";
 const app = express();
 const port = 3000;
 
+app.use(cors()) 
 app.use(express.static("public"));
 app.use(express.json());
 
