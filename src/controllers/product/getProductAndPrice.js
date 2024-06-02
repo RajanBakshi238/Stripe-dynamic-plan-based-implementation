@@ -18,15 +18,15 @@ const getProductAndPrice = async (request, response) => {
     // });
 
     // same issue i m getting while running serach as above search not available
-    const stripeProductPricing = await stripeInstance.prices.search({
-    //   query: `id: ${product.stripeProductObject.default_price}`,
-        query:  'active:\'true\' AND metadata[\'order_id\']:\'6735\''
-    });
+    // const stripeProductPricing = await stripeInstance.prices.search({
+    // //   query: `id: ${product.stripeProductObject.default_price}`,
+    //     query:  'active:\'true\' AND metadata[\'order_id\']:\'6735\''
+    // });
 
     return response.json({
       data: product,
       //   stripeProduct: stripeProduct,
-      stripeProductPricing,
+    //   stripeProductPricing,
     });
   } catch (error) {
     return response.status(500).json({
