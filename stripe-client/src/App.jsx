@@ -1,5 +1,5 @@
 import "./App.css";
-import { Profiler, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axiosInstance from "./utils/api";
 
 function App() {
